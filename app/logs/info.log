@@ -1,0 +1,4 @@
+[2022-04-17 21:07:10,626] 172.28.0.1 requested http://localhost/dashboard
+INFO in __init__: method: GET,  path: /dashboard,  status: 200,  duration: 0.13,  time: 2022-04-17T21:07:10Z,  ip: 172.28.0.1,  host: localhost,  params: {}, 
+[2022-04-17 21:07:11,028] 172.28.0.1 requested http://localhost/about
+INFO in __init__: method: GET,  path: /about,  status: 200,  duration: 0.01,  time: 2022-04-17T21:07:11Z,  ip: 172.28.0.1,  host: localhost,  params: {}, 

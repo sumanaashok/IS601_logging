@@ -1,0 +1,4 @@
+INFO in __init__: method: GET,  path: /dashboard,  status: 200,  duration: 0.13,  time: 2022-04-17T21:07:10Z,  ip: 172.28.0.1,  host: localhost,  params: {}, 
+DEBUG in __init__: method: GET,  path: /dashboard,  status: 200,  duration: 0.13,  time: 2022-04-17T21:07:10Z,  ip: 172.28.0.1,  host: localhost,  params: {}, 
+INFO in __init__: method: GET,  path: /about,  status: 200,  duration: 0.01,  time: 2022-04-17T21:07:11Z,  ip: 172.28.0.1,  host: localhost,  params: {}, 
+DEBUG in __init__: method: GET,  path: /about,  status: 200,  duration: 0.01,  time: 2022-04-17T21:07:11Z,  ip: 172.28.0.1,  host: localhost,  params: {}, 
