@@ -1,4 +1,84 @@
-INFO in __init__: method: GET,  path: /dashboard,  status: 200,  duration: 0.13,  time: 2022-04-17T21:07:10Z,  ip: 172.28.0.1,  host: localhost,  params: {}, 
-DEBUG in __init__: method: GET,  path: /dashboard,  status: 200,  duration: 0.13,  time: 2022-04-17T21:07:10Z,  ip: 172.28.0.1,  host: localhost,  params: {}, 
-INFO in __init__: method: GET,  path: /about,  status: 200,  duration: 0.01,  time: 2022-04-17T21:07:11Z,  ip: 172.28.0.1,  host: localhost,  params: {}, 
-DEBUG in __init__: method: GET,  path: /about,  status: 200,  duration: 0.01,  time: 2022-04-17T21:07:11Z,  ip: 172.28.0.1,  host: localhost,  params: {}, 
+Timestamp of Request: [2022-04-18 18:19:29,141]
+http://localhost/login requested by 172.28.0.1
+DEBUG in __init__: Login Successful!
+
+Timestamp of Request: [2022-04-18 18:19:37,685]
+http://localhost/logout requested by 172.28.0.1
+DEBUG in __init__: Logout Successful!
+
+Timestamp of Request: [2022-04-18 18:19:37,685]
+http://localhost/logout requested by 172.28.0.1
+DEBUG in __init__: Logout Successful!
+
+Timestamp of Request: [2022-04-18 18:19:54,953]
+http://localhost/login requested by 172.28.0.1
+DEBUG in __init__: Login Successful!
+
+Timestamp of Request: [2022-04-18 18:19:54,953]
+http://localhost/login requested by 172.28.0.1
+DEBUG in __init__: Login Successful!
+
+Timestamp of Request: [2022-04-18 18:19:54,953]
+http://localhost/login requested by 172.28.0.1
+DEBUG in __init__: Login Successful!
+
+Timestamp of Request: [2022-04-18 18:19:55,144]
+http://localhost/login requested by 172.28.0.1
+DEBUG in __init__: Login failed!
+
+Timestamp of Request: [2022-04-18 18:19:55,144]
+http://localhost/login requested by 172.28.0.1
+DEBUG in __init__: Login failed!
+
+Timestamp of Request: [2022-04-18 18:19:55,144]
+http://localhost/login requested by 172.28.0.1
+DEBUG in __init__: Login failed!
+
+Timestamp of Request: [2022-04-18 18:19:55,144]
+http://localhost/login requested by 172.28.0.1
+DEBUG in __init__: Login failed!
+
+Timestamp of Request: [2022-04-18 18:20:36,148]
+http://localhost/login requested by 172.28.0.1
+DEBUG in __init__: Login Successful!
+
+Timestamp of Request: [2022-04-18 18:20:36,148]
+http://localhost/login requested by 172.28.0.1
+DEBUG in __init__: Login Successful!
+
+Timestamp of Request: [2022-04-18 18:20:36,148]
+http://localhost/login requested by 172.28.0.1
+DEBUG in __init__: Login Successful!
+
+Timestamp of Request: [2022-04-18 18:20:36,148]
+http://localhost/login requested by 172.28.0.1
+DEBUG in __init__: Login Successful!
+
+Timestamp of Request: [2022-04-18 18:20:36,148]
+http://localhost/login requested by 172.28.0.1
+DEBUG in __init__: Login Successful!
+
+Timestamp of Request: [2022-04-18 18:25:43,030]
+http://localhost/logout requested by 172.28.0.1
+DEBUG in __init__: Logout Successful!
+
+Timestamp of Request: [2022-04-18 18:25:43,030]
+http://localhost/logout requested by 172.28.0.1
+DEBUG in __init__: Logout Successful!
+
+Timestamp of Request: [2022-04-18 18:25:43,030]
+http://localhost/logout requested by 172.28.0.1
+DEBUG in __init__: Logout Successful!
+
+Timestamp of Request: [2022-04-18 18:25:43,030]
+http://localhost/logout requested by 172.28.0.1
+DEBUG in __init__: Logout Successful!
+
+Timestamp of Request: [2022-04-18 18:25:43,030]
+http://localhost/logout requested by 172.28.0.1
+DEBUG in __init__: Logout Successful!
+
+Timestamp of Request: [2022-04-18 18:25:43,030]
+http://localhost/logout requested by 172.28.0.1
+DEBUG in __init__: Logout Successful!
+

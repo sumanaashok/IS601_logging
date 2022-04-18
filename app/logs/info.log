@@ -1,4 +1,44 @@
-[2022-04-17 21:07:10,626] 172.28.0.1 requested http://localhost/dashboard
-INFO in __init__: method: GET,  path: /dashboard,  status: 200,  duration: 0.13,  time: 2022-04-17T21:07:10Z,  ip: 172.28.0.1,  host: localhost,  params: {}, 
-[2022-04-17 21:07:11,028] 172.28.0.1 requested http://localhost/about
-INFO in __init__: method: GET,  path: /about,  status: 200,  duration: 0.01,  time: 2022-04-17T21:07:11Z,  ip: 172.28.0.1,  host: localhost,  params: {}, 
+Timestamp of Request: [2022-04-18 18:19:16,664]
+http://localhost/ requested by 172.28.0.1
+INFO in __init__: method: GET,  path: /,  status: 200,  duration: 0.15,  time: 2022-04-18T18:19:16Z,  ip: 172.28.0.1,  host: localhost, 
+
+Timestamp of Request: [2022-04-18 18:19:29,334]
+http://localhost/login requested by 172.28.0.1
+INFO in __init__: method: POST,  path: /login,  status: 302,  duration: 0.2,  time: 2022-04-18T18:19:29Z,  ip: 172.28.0.1,  host: localhost, 
+
+Timestamp of Request: [2022-04-18 18:19:29,362]
+http://localhost/dashboard requested by 172.28.0.1
+INFO in __init__: method: GET,  path: /dashboard,  status: 200,  duration: 0.02,  time: 2022-04-18T18:19:29Z,  ip: 172.28.0.1,  host: localhost, 
+
+Timestamp of Request: [2022-04-18 18:19:37,687]
+http://localhost/logout requested by 172.28.0.1
+INFO in __init__: method: GET,  path: /logout,  status: 302,  duration: 0.04,  time: 2022-04-18T18:19:37Z,  ip: 172.28.0.1,  host: localhost, 
+
+Timestamp of Request: [2022-04-18 18:19:37,704]
+http://localhost/login requested by 172.28.0.1
+INFO in __init__: method: GET,  path: /login,  status: 200,  duration: 0.01,  time: 2022-04-18T18:19:37Z,  ip: 172.28.0.1,  host: localhost, 
+
+Timestamp of Request: [2022-04-18 18:19:55,148]
+http://localhost/login requested by 172.28.0.1
+INFO in __init__: method: POST,  path: /login,  status: 302,  duration: 0.2,  time: 2022-04-18T18:19:55Z,  ip: 172.28.0.1,  host: localhost, 
+
+Timestamp of Request: [2022-04-18 18:19:55,156]
+http://localhost/login requested by 172.28.0.1
+INFO in __init__: method: GET,  path: /login,  status: 200,  duration: 0.0,  time: 2022-04-18T18:19:55Z,  ip: 172.28.0.1,  host: localhost, 
+
+Timestamp of Request: [2022-04-18 18:20:36,337]
+http://localhost/login requested by 172.28.0.1
+INFO in __init__: method: POST,  path: /login,  status: 302,  duration: 0.2,  time: 2022-04-18T18:20:36Z,  ip: 172.28.0.1,  host: localhost, 
+
+Timestamp of Request: [2022-04-18 18:20:36,353]
+http://localhost/dashboard requested by 172.28.0.1
+INFO in __init__: method: GET,  path: /dashboard,  status: 200,  duration: 0.01,  time: 2022-04-18T18:20:36Z,  ip: 172.28.0.1,  host: localhost, 
+
+Timestamp of Request: [2022-04-18 18:25:43,073]
+http://localhost/logout requested by 172.28.0.1
+INFO in __init__: method: GET,  path: /logout,  status: 302,  duration: 0.08,  time: 2022-04-18T18:25:43Z,  ip: 172.28.0.1,  host: localhost, 
+
+Timestamp of Request: [2022-04-18 18:25:43,083]
+http://localhost/login requested by 172.28.0.1
+INFO in __init__: method: GET,  path: /login,  status: 200,  duration: 0.0,  time: 2022-04-18T18:25:43Z,  ip: 172.28.0.1,  host: localhost, 
+
