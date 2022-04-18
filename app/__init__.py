@@ -41,16 +41,11 @@ class RequestFormatter(logging.Formatter):
         return super().format(record)
 
 
-class DebugFormatter(logging.Formatter):
-    def format(self, record):
-        if has_request_context():
-            record.url = request.url
-            record.remote_addr = request.remote_addr
-        else:
-            record.url = None
-            record.remote_addr = None
-
-        return super().format(record)
+# class DebugFormatter(logging.Formatter):
+#     def format(self, record):
+#         print('debug')
+#
+#         return super().format(record)
 
 
 def create_app():
@@ -86,35 +81,33 @@ def create_app():
         os.mkdir(logdir)
     # set name of the log file
     log_file = os.path.join(logdir, 'info.log')
-    debug_file = os.path.join(logdir, 'debug.log')
+    # debug_file = os.path.join(logdir, 'debug.log')
 
-    handler = logging.FileHandler(log_file, mode='w')
+    handler = logging.FileHandler(log_file)
 
-    debug_handler = logging.FileHandler(debug_file, mode='w')
+    # debug_handler = logging.FileHandler(debug_file, mode='w')
 
     # Create a log file formatter object to create the entry in the log
     formatter = RequestFormatter(
-        '[%(asctime)s] %(remote_addr)s requested %(url)s\n'
-        '%(levelname)s in %(module)s: %(message)s'
+        'Timestamp of Request: [%(asctime)s]\n' '%(url)s requested by %(remote_addr)s\n'
+        '%(levelname)s in %(module)s: %(message)s\n'
     )
 
-    debug_formatter = DebugFormatter(
-        '%(levelname)s in %(module)s: %(message)s'
-    )
+    # debug_formatter = RequestFormatter(
+    #     '%(levelname)s in %(module)s: %(message)s'
+    # )
 
     # set the formatter for the log entry
     handler.setFormatter(formatter)
 
-    debug_handler.setFormatter(debug_formatter)
+    # debug_handler.setFormatter(debug_formatter)
 
     # Set the logging level of the file handler object so that it logs INFO and up
     handler.setLevel(logging.INFO)
 
-    debug_handler.setLevel(logging.DEBUG)
+    # debug_handler.setLevel(logging.DEBUG)
     # Add the handler for the log entry
     app.logger.addHandler(handler)
-
-    app.logger.addHandler(debug_handler)
 
     @app.before_request
     def start_timer():
@@ -145,8 +138,7 @@ def create_app():
             ('duration', duration),
             ('time', timestamp),
             ('ip', ip),
-            ('host', host),
-            ('params', args)
+            ('host', host)
         ]
 
         request_id = request.headers.get('X-Request-ID')
@@ -161,7 +153,7 @@ def create_app():
         # this triggers a log entry to be created with whatever is in the line variable
         app.logger.info(line)
 
-        app.logger.debug(line)
+        # app.logger.debug(line)
 
         return response
 
