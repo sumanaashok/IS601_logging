@@ -1,19 +1,18 @@
-# import datetime
 import logging
 import os
-# from datetime import time
+
 
 from flask import Flask, current_app
 from flask import has_request_context
 from flask import Blueprint, render_template, request, redirect, url_for, flash
-# from rfc3339 import rfc3339
+
 
 from app.auth.decorators import admin_required
 from flask_login import login_user, login_required, logout_user, current_user
 from werkzeug.security import generate_password_hash
 from app.auth.forms import login_form, register_form, profile_form, security_form, user_edit_form
 
-# from app import create_app
+
 from app.db import db
 from app.db.models import User
 
@@ -21,7 +20,7 @@ auth = Blueprint('auth', __name__, template_folder='templates')
 
 
 def setup_logger():
-    """To setup as many loggers as you want"""
+    """To setup debug logger"""
     debug_formatter = DebugFormatter(
         'Timestamp of Request: [%(asctime)s]\n' '%(url)s requested by %(remote_addr)s\n'
         '%(levelname)s in %(module)s: %(message)s\n'
@@ -30,6 +29,7 @@ def setup_logger():
     debug_handler = logging.FileHandler(debug_file)
     debug_handler.setFormatter(debug_formatter)
     debug_handler.setLevel(logging.DEBUG)
+    app.logger.addHandler(debug_handler)
     return debug_handler
 
 
@@ -45,7 +45,8 @@ class DebugFormatter(logging.Formatter):
         return super().format(record)
 
 
-
+app = Flask(__name__)
+debug_hand = setup_logger()
 
 
 @auth.route('/login', methods=['POST', 'GET'])
@@ -54,16 +55,9 @@ def login():
     if current_user.is_authenticated:
         return redirect(url_for('auth.dashboard'))
     if form.validate_on_submit():
-        app = Flask(__name__)
-        debug_hand = setup_logger()
-        app.logger.addHandler(debug_hand)
-        app.logger.debug('Login Successful!')
         user = User.query.filter_by(email=form.email.data).first()
         if user is None or not user.check_password(form.password.data):
             flash('Invalid username or password')
-            app = Flask(__name__)
-            debug_hand = setup_logger()
-            app.logger.addHandler(debug_hand)
             app.logger.debug('Login failed!')
             return redirect(url_for('auth.login'))
         else:
@@ -72,6 +66,7 @@ def login():
             db.session.commit()
             login_user(user)
             flash("Welcome", 'success')
+            app.logger.debug('Login Successful!')
             return redirect(url_for('auth.dashboard'))
     return render_template('login.html', form=form)
 
@@ -114,9 +109,6 @@ def logout():
     db.session.add(user)
     db.session.commit()
     logout_user()
-    app = Flask(__name__)
-    debug_hand = setup_logger()
-    app.logger.addHandler(debug_hand)
     app.logger.debug('Logout Successful!')
     return redirect(url_for('auth.login'))
 

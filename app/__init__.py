@@ -12,7 +12,6 @@ from flask_bootstrap import Bootstrap5
 from flask_wtf.csrf import CSRFProtect
 
 from app.auth import auth
-from app.auth import auth
 from app.cli import create_database
 from app.context_processors import utility_text_processors
 from app.db import db
@@ -39,13 +38,6 @@ class RequestFormatter(logging.Formatter):
             record.remote_addr = None
 
         return super().format(record)
-
-
-# class DebugFormatter(logging.Formatter):
-#     def format(self, record):
-#         print('debug')
-#
-#         return super().format(record)
 
 
 def create_app():
@@ -81,11 +73,8 @@ def create_app():
         os.mkdir(logdir)
     # set name of the log file
     log_file = os.path.join(logdir, 'info.log')
-    # debug_file = os.path.join(logdir, 'debug.log')
 
     handler = logging.FileHandler(log_file)
-
-    # debug_handler = logging.FileHandler(debug_file, mode='w')
 
     # Create a log file formatter object to create the entry in the log
     formatter = RequestFormatter(
@@ -93,19 +82,12 @@ def create_app():
         '%(levelname)s in %(module)s: %(message)s\n'
     )
 
-    # debug_formatter = RequestFormatter(
-    #     '%(levelname)s in %(module)s: %(message)s'
-    # )
-
     # set the formatter for the log entry
     handler.setFormatter(formatter)
-
-    # debug_handler.setFormatter(debug_formatter)
 
     # Set the logging level of the file handler object so that it logs INFO and up
     handler.setLevel(logging.INFO)
 
-    # debug_handler.setLevel(logging.DEBUG)
     # Add the handler for the log entry
     app.logger.addHandler(handler)
 
@@ -152,8 +134,6 @@ def create_app():
         line = " ".join(parts)
         # this triggers a log entry to be created with whatever is in the line variable
         app.logger.info(line)
-
-        # app.logger.debug(line)
 
         return response
 
